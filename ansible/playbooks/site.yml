@@ -1,0 +1,11 @@
+- name: Provision MongoDB database
+  hosts: monodb
+  become: true
+  roles:
+    - mongodb
+
+- name: Provision nodejs
+  hosts: node
+  become: true
+  roles:
+    - node
