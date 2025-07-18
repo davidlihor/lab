@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: db-pod
+spec:
+  containers:
+    - name: mysql
+      image: mysql:5.7
+      volumeMounts:
+        - mountPath: /var/lib/mysql
+          name: db-volume
+  volumes:
+    - name: db-volume
+      hostPath:
+        path: /data
+        type: DirectoryOrCreate
